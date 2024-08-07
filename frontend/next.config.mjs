@@ -1,4 +1,33 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+const apiUrl = process.env.FASTAPI_CONNECTION_URL;
+
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: apiUrl,
+        pathname: `/api/*`,
+      },
+    ],
+  },
+  rewrites: async () => {
+    return [
+      {
+        source: "/api/:path*",
+        destination: `${apiUrl}/api/:path*`,
+      },
+      {
+        source: "/docs",
+        destination: `${apiUrl}/docs`,
+      },
+      {
+        source: "/openapi.json",
+        destination: `${apiUrl}/openapi.json`,
+      },
+    ];
+  },
+};
 
 export default nextConfig;
