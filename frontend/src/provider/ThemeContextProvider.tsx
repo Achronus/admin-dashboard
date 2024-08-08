@@ -1,7 +1,8 @@
 "use client";
 
+import { themeSettings } from "@/lib/theme";
 import { ThemeMode } from "@/types/core";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { createContext, useContext, useState } from "react";
 
 type ThemeContextProviderProps = {
@@ -18,9 +19,11 @@ type ThemeContextProps = {
 export const ThemeContextProvider = ({ children }: ThemeContextProps) => {
   const [theme, setTheme] = useState<ThemeMode>("dark");
 
+  const themeStyles = createTheme(themeSettings(theme));
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={themeStyles}>
         <CssBaseline />
         {children}
       </ThemeProvider>
