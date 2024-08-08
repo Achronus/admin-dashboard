@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeMode } from "@/lib/theme";
+import { ThemeMode } from "@/types/core";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createContext, useContext, useState } from "react";
 
