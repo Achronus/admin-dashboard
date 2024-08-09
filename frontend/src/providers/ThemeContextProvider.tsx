@@ -8,6 +8,7 @@ import { createContext, useContext, useState } from "react";
 type ThemeContextProviderProps = {
   theme: ThemeMode;
   setTheme: (mode: ThemeMode) => void;
+  toggleTheme: () => void;
 };
 
 const ThemeContext = createContext<ThemeContextProviderProps | null>(null);
@@ -21,8 +22,12 @@ export const ThemeContextProvider = ({ children }: ThemeContextProps) => {
 
   const themeStyles = createTheme(themeSettings(theme));
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev == "light" ? "dark" : "light"));
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
       <ThemeProvider theme={themeStyles}>
         <CssBaseline />
         {children}
