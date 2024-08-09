@@ -6,7 +6,7 @@ import { Bell, Search, Settings, User } from "lucide-react";
 
 const Topbar = () => {
   return (
-    <div className="flex justify-between py-4 px-6">
+    <div className="flex justify-between mb-6">
       <section className="flex rounded items-center justify-center bg-primary-400 px-2">
         <Input
           className="flex-1 border-none bg-transparent"

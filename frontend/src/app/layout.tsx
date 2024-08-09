@@ -26,14 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={`${font.className} flex`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           disableTransitionOnChange
         >
           <Sidebar />
-          <main className="content">
+          <main className="content flex-1 mx-6 my-4">
             <Topbar />
             {children}
           </main>
