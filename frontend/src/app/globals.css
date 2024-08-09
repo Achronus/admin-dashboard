@@ -2,9 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  @apply h-full w-full;
+@layer base {
+  :root {
+    @apply h-full w-full;
+    --font-family: "Source Sans Pro, sans-serif";
+    --font-size: 12px;
+  }
 }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@import "../theme/styles.css";
 
 .app {
   @apply flex relative;

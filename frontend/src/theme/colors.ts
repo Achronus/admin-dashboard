@@ -1,4 +1,6 @@
-export const dark = {
+import { Theme } from "./types";
+
+export const dark: Theme = {
   gray: {
     100: "#e0e0e0",
     200: "#c2c2c2",
@@ -56,7 +58,7 @@ export const dark = {
   },
 };
 
-export const light = {
+export const light: Theme = {
   gray: {
     100: "#141414",
     200: "#292929",
