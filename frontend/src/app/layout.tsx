@@ -1,4 +1,4 @@
-import { ThemeContextProvider } from "@/provider/ThemeContextProvider";
+import { ThemeContextProvider } from "@/providers/ThemeContextProvider";
 
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
