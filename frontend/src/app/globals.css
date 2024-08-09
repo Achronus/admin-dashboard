@@ -5,8 +5,31 @@
 @layer base {
   :root {
     @apply h-full w-full;
-    --font-family: "Source Sans Pro, sans-serif";
-    --font-size: 12px;
+    font-family: "Source Sans Pro, sans-serif";
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
   }
 }
 
