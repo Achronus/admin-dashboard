@@ -1,7 +1,12 @@
-import { ThemeContextProvider } from "@/providers/ThemeContextProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+
+import Sidebar from "@/layouts/Sidebar";
+import Topbar from "@/layouts/Topbar";
 
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
+
+import "normalize.css";
 import "./globals.css";
 
 const font = Source_Sans_3({
@@ -22,9 +27,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ThemeContextProvider>
-          <main className="content">{children}</main>
-        </ThemeContextProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          <Sidebar />
+          <main className="content">
+            <Topbar />
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
