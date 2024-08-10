@@ -32,7 +32,7 @@ export const DataItems: SideNavItem[] = [
     icon: <Contact size={24} />,
   },
   {
-    title: "Invoice Balances",
+    title: "Invoices",
     path: "/invoices",
     icon: <Receipt size={24} />,
   },
