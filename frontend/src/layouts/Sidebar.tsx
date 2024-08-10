@@ -26,7 +26,7 @@ const Sidebar = () => {
   return (
     <ProSidebar
       collapsed={isCollapsed}
-      className="h-screen !border-none"
+      className="h-full min-h-screen !border-none bg-primary-400"
       rootStyles={{
         [`.${sidebarClasses.container}`]: {
           background: "hsl(var(--primary-400))",
