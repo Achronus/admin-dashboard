@@ -1,4 +1,11 @@
 export type TeamAccessRoles = "admin" | "manager" | "user";
+export type Cities =
+  | "New York"
+  | "Tenting"
+  | "Esvazark"
+  | "Evertin"
+  | "Esteras"
+  | "Colunza";
 
 export type TeamMember = {
   id: number;
@@ -28,4 +35,16 @@ export type DataTableFilterInput = {
 export type DataTableColumnFilter = {
   name: string;
   options: DataTableFilterOption[];
+};
+
+export type UserContactDetails = {
+  id: number;
+  name: string;
+  email: string;
+  age: number;
+  phone: string;
+  address: string;
+  city: Cities;
+  zipCode: string;
+  registrarId: number;
 };
