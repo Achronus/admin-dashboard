@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 import { Table } from "@tanstack/react-table";
-import { RotateCcw } from "lucide-react";
+import { RotateCcw, Search } from "lucide-react";
 
 import { DataTableColumnFilter, DataTableFilterInput } from "@/types/data";
 import { DataTableFacetedFilter } from "./filter";
@@ -24,23 +24,26 @@ export function DataTableToolbar<TData>({
   const isFiltered = table.getState().columnFilters.length > 0;
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between mb-4">
       <div className="flex flex-1 items-center space-x-2">
         {filterInput && (
-          <Input
-            placeholder={filterInput.placeholder}
-            value={
-              (table
-                .getColumn(filterInput.column)
-                ?.getFilterValue() as string) ?? ""
-            }
-            onChange={(event) =>
-              table
-                .getColumn(filterInput.column)
-                ?.setFilterValue(event.target.value)
-            }
-            className="h-8 w-[150px] lg:w-[250px]"
-          />
+          <div className="flex bg-primary-400 justify-center items-center rounded  py-1">
+            <Search className="ml-2 h-4 w-4 opacity-50" />
+            <Input
+              placeholder={filterInput.placeholder}
+              value={
+                (table
+                  .getColumn(filterInput.column)
+                  ?.getFilterValue() as string) ?? ""
+              }
+              onChange={(event) =>
+                table
+                  .getColumn(filterInput.column)
+                  ?.setFilterValue(event.target.value)
+              }
+              className="h-8 w-[150px] lg:w-[250px] border-none bg-primary-400 rounded"
+            />
+          </div>
         )}
         {filterColumns &&
           filterColumns.map(
@@ -60,7 +63,7 @@ export function DataTableToolbar<TData>({
           <Button
             variant="ghost"
             onClick={() => table.resetColumnFilters()}
-            className="h-8 px-2 lg:px-3"
+            className="h-8 px-2 lg:px-3 hover:bg-primary-400 transition-all rounded"
           >
             Reset
             <RotateCcw className="ml-2 h-4 w-4" />

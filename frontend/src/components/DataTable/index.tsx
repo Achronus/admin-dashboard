@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
       <DataTableToolbar
         table={table}
         filterColumns={TeamFilterColumns}
-        filterInput={{ column: "name", placeholder: "Filter name..." }}
+        filterInput={{ column: "name", placeholder: "Filter by name..." }}
       />
       <div className="rounded-md bg-primary-400">
         <Table>
