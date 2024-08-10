@@ -4,7 +4,7 @@ import { DataTable } from "@/components/DataTable";
 import { DataTableColumnHeader } from "@/components/DataTable/header";
 import Header from "@/components/Header";
 import { accessIcons } from "@/data/icons";
-import { mockDataTeam } from "@/data/mockData";
+import { mockDataTeam, TeamFilterColumns } from "@/data/mockData";
 import { cn } from "@/lib/utils";
 import { TeamMember } from "@/types/data";
 import { ColumnDef } from "@tanstack/react-table";
@@ -79,7 +79,12 @@ const Team = () => {
   return (
     <section className="flex flex-col">
       <Header title="TEAM" subTitle="Managing your team members" />
-      <DataTable columns={columns} data={mockDataTeam} />
+      <DataTable
+        columns={columns}
+        data={mockDataTeam}
+        filterColumns={TeamFilterColumns}
+        filterInput={{ column: "name", placeholder: "Filter by name..." }}
+      />
     </section>
   );
 };

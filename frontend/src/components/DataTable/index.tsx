@@ -23,7 +23,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { TeamFilterColumns } from "@/data/mockData";
+import { DataTableColumnFilter, DataTableFilterInput } from "@/types/data";
 import { useState } from "react";
 import { DataTablePagination } from "./pagination";
 import { DataTableToolbar } from "./toolbar";
@@ -31,11 +31,15 @@ import { DataTableToolbar } from "./toolbar";
 type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  filterColumns?: DataTableColumnFilter[];
+  filterInput?: DataTableFilterInput;
 };
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  filterColumns,
+  filterInput,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = useState({});
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -70,8 +74,8 @@ export function DataTable<TData, TValue>({
     <div>
       <DataTableToolbar
         table={table}
-        filterColumns={TeamFilterColumns}
-        filterInput={{ column: "name", placeholder: "Filter by name..." }}
+        filterColumns={filterColumns}
+        filterInput={filterInput}
       />
       <div className="rounded-md bg-primary-400">
         <Table>
