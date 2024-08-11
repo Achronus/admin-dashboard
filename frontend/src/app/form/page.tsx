@@ -105,7 +105,10 @@ const ProfileForm = () => {
             />
           </div>
 
-          <Button type="submit" className="">
+          <Button
+            type="submit"
+            className="bg-secondary rounded hover:bg-primary-300"
+          >
             Create New User
           </Button>
         </form>
