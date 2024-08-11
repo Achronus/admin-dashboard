@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
+    <section id="data-table">
       <DataTableToolbar
         table={table}
         filterColumns={filterColumns}
@@ -129,6 +129,6 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
       <DataTablePagination table={table} />
-    </div>
+    </section>
   );
 }

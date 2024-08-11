@@ -56,14 +56,14 @@ export const columns: ColumnDef<InvoiceDetails>[] = [
 
 const Invoices = () => {
   return (
-    <section className="flex flex-col">
+    <>
       <Header title="INVOICES" subTitle="List of invoice balances" />
       <DataTable
         columns={columns}
         data={mockDataInvoices}
         filterInput={{ column: "name", placeholder: "Filter by name..." }}
       />
-    </section>
+    </>
   );
 };
 

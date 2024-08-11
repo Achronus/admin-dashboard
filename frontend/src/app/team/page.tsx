@@ -77,7 +77,7 @@ export const columns: ColumnDef<TeamMember>[] = [
 
 const Team = () => {
   return (
-    <section className="flex flex-col">
+    <>
       <Header title="TEAM" subTitle="Managing your team members" />
       <DataTable
         columns={columns}
@@ -85,7 +85,7 @@ const Team = () => {
         filterColumns={TeamFilterColumns}
         filterInput={{ column: "name", placeholder: "Filter by name..." }}
       />
-    </section>
+    </>
   );
 };
 

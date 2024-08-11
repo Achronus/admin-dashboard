@@ -69,7 +69,7 @@ export const columns: ColumnDef<UserContactDetails>[] = [
 
 const Contacts = () => {
   return (
-    <section className="flex flex-col">
+    <>
       <Header title="CONTACTS" subTitle="List of contacts" />
       <DataTable
         columns={columns}
@@ -77,7 +77,7 @@ const Contacts = () => {
         filterColumns={ContactFilterColumns}
         filterInput={{ column: "name", placeholder: "Filter by name..." }}
       />
-    </section>
+    </>
   );
 };
 
